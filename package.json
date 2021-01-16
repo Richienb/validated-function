@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "validated-function",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Invoke a function until it's return value satisfies a check.",
+	"repository": "https://github.com/Richienb/validated-function.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,7 +17,13 @@
 		"lint": "xo",
 		"test": "xo && ava"
 	},
-	"keywords": [],
+	"keywords": [
+		"function",
+		"validate",
+		"check",
+		"retry",
+		"unique"
+	],
 	"dependencies": {},
 	"devDependencies": {
 		"ava": "^3.14.0",

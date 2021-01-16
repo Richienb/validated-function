@@ -1,17 +1,29 @@
-/**
-My awesome module.
+declare namespace validatedFunction {
+	export interface Options {
+		/**
+		The maximum amount of times to invoke the function.
 
-@param input Lorem ipsum.
-@param postfix Lorem ipsum.
+		@default Infinity
+		*/
+		maximumTries?: number
+	}
+}
+
+/**
+Invoke a function until it's return value satisfies a check.
+
+@param function_ The function to invoke.
+@param check The function to check the return value.
 
 @example
 ```
-const theModule = require("the-module")
+const validatedFunction = require("validated-function")
 
-theModule("unicorns")
-//=> "unicorns & rainbows"
+const uniqueId = validatedFunction(randomId, id => !currentIds.includes(id))
+
+console.log(uniqueId())
 ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string
+declare function validatedFunction<FunctionReturnValue>(function_: () => FunctionReturnValue, check: (value: FunctionReturnValue) => boolean, options?: validatedFunction.Options): FunctionReturnValue
 
-export = theModule
+export = validatedFunction

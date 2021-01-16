@@ -1,41 +1,48 @@
-# the-module
+# validated-function
 
-My awesome module.
+Invoke a function until it's return value satisfies a check. Useful for ensuring random IDs are unique within a database.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/validated-function.png)](https://npmjs.com/package/validated-function)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install validated-function
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module")
+const validatedFunction = require("validated-function")
 
-theModule("unicorns")
-//=> "unicorns & rainbows"
+const uniqueId = validatedFunction(randomId, id => !currentIds.includes(id))
+
+console.log(uniqueId())
 ```
 
 ## API
 
-### theModule(input, options?)
+### validateFunction(function_, check, options?)
 
-#### input
+#### function_
 
-Type: `string`
+Type: `() => any`
 
-Lorem ipsum.
+The function to invoke.
+
+#### check
+
+Type: `(value) => boolean`
+
+The function to check the return value.
 
 #### options
 
 Type: `object`
 
-##### postfix
+##### maximumTries
 
-Type: `string`\
-Default: `rainbows`
+Type: `number`\
+Default: `Infinity`
 
-Lorem ipsum.
+The maximum amount of times to invoke the function.
