@@ -1,6 +1,6 @@
 {
 	"name": "validated-function",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Invoke a function until it's return value satisfies a check.",
 	"repository": "https://github.com/Richienb/validated-function.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
